@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV4_WECHAT_QRCODE_H_
 #define _OPENCV4_WECHAT_QRCODE_H_
 
@@ -20,6 +18,7 @@ typedef std::vector<std::string> *StringsVector;
 typedef void* WeChatQRCode;
 typedef void* StringsVector;
 #endif
+
 DLL_EXPORT WeChatQRCode NewWeChatQRCode(const char *detector_prototxt_path, const char *detector_caffe_model_path,
                              const char *super_resolution_prototxt_path, const char *super_resolution_caffe_model_path);
 DLL_EXPORT CStrings WeChatQRCode_DetectAndDecode(WeChatQRCode wq, Mat img, struct Mats *points, StringsVector codes);

@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_XPHOTO_H_
 #define _OPENCV3_XPHOTO_H_
 
@@ -29,11 +27,9 @@ typedef void* TonemapDurand;
 
 
 // ----------------------- bm3d_image_denoising -----------------------
-
-void Xphoto_ApplyChannelGains(Mat src, Mat dst, float gainB, float gainG, float gainR) ;
-
-void Xphoto_Bm3dDenoising_Step(Mat src, Mat dststep1, Mat dststep2) ;
-void Xphoto_Bm3dDenoising_Step_WithParams(
+DLL_EXPORT void Xphoto_ApplyChannelGains(Mat src, Mat dst, float gainB, float gainG, float gainR) ;
+DLL_EXPORT void Xphoto_Bm3dDenoising_Step(Mat src, Mat dststep1, Mat dststep2) ;
+DLL_EXPORT void Xphoto_Bm3dDenoising_Step_WithParams(
     Mat src, Mat dststep1, Mat dststep2,
     float h, int templateWindowSize,
     int searchWindowSize, int blockMatchingStep1,
@@ -42,9 +38,8 @@ void Xphoto_Bm3dDenoising_Step_WithParams(
     int normType, int step,
     int transformType
 ) ;
-
-void Xphoto_Bm3dDenoising(Mat src, Mat dst) ;
-void Xphoto_Bm3dDenoising_WithParams(
+DLL_EXPORT void Xphoto_Bm3dDenoising(Mat src, Mat dst) ;
+DLL_EXPORT void Xphoto_Bm3dDenoising_WithParams(
     Mat src, Mat dst,
     float h, int templateWindowSize,
     int searchWindowSize, int blockMatchingStep1,
@@ -67,9 +62,9 @@ DLL_EXPORT LearningBasedWB LearningBasedWB_Create();
 DLL_EXPORT LearningBasedWB LearningBasedWB_CreateWithParams(const char* pathmodel);
 DLL_EXPORT void LearningBasedWB_Close(LearningBasedWB b);
 DLL_EXPORT void LearningBasedWB_ExtractSimpleFeatures(LearningBasedWB b, Mat src, Mat dst);
-int LearningBasedWB_GetHistBinNum(LearningBasedWB b) ;
-int LearningBasedWB_GetRangeMaxVal(LearningBasedWB b) ;
-float LearningBasedWB_GetSaturationThreshold(LearningBasedWB b) ;
+DLL_EXPORT int LearningBasedWB_GetHistBinNum(LearningBasedWB b) ;
+DLL_EXPORT int LearningBasedWB_GetRangeMaxVal(LearningBasedWB b) ;
+DLL_EXPORT float LearningBasedWB_GetSaturationThreshold(LearningBasedWB b) ;
 DLL_EXPORT void LearningBasedWB_SetHistBinNum(LearningBasedWB b, int val);
 DLL_EXPORT void LearningBasedWB_SetRangeMaxVal(LearningBasedWB b, int val);
 DLL_EXPORT void LearningBasedWB_SetSaturationThreshold(LearningBasedWB b, float val);
@@ -93,7 +88,7 @@ DLL_EXPORT void SimpleWB_BalanceWhite(SimpleWB b, Mat src, Mat dst);
 
 // -------------------- TonemapDurand --------------------
 DLL_EXPORT TonemapDurand TonemapDurand_Create();
-TonemapDurand TonemapDurand_CreateWithParams(float gamma, float contrast, float saturation,
+DLL_EXPORT TonemapDurand TonemapDurand_CreateWithParams(float gamma, float contrast, float saturation,
         float sigma_color, float sigma_space) ;
 DLL_EXPORT void TonemapDurand_Close(TonemapDurand b);
 DLL_EXPORT float TonemapDurand_GetContrast(TonemapDurand b);

@@ -1,7 +1,8 @@
-#include "mvsc.h"
 
 #ifndef _OPENCV3_IMG_HASH_H_
 #define _OPENCV3_IMG_HASH_H_
+
+#include "../mvsc.h"
 
 #ifdef __cplusplus
 #include <opencv2/opencv.hpp>
@@ -10,6 +11,7 @@ extern "C" {
 #endif
 
 #include "../core.h"
+
 DLL_EXPORT void pHashCompute(Mat inputArr, Mat outputArr);
 DLL_EXPORT double pHashCompare(Mat a, Mat b);
 DLL_EXPORT void averageHashCompute(Mat inputArr, Mat outputArr);

@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_DNN_H_
 #define _OPENCV3_DNN_H_
 
@@ -20,6 +18,7 @@ typedef cv::Ptr<cv::dnn::Layer>* Layer;
 typedef void* Net;
 typedef void* Layer;
 #endif
+
 DLL_EXPORT Net Net_ReadNet(const char* model, const char* config);
 DLL_EXPORT Net Net_ReadNetBytes(const char* framework, struct ByteArray model, struct ByteArray config);
 DLL_EXPORT Net Net_ReadNetFromCaffe(const char* prototxt, const char* caffeModel);
@@ -50,8 +49,8 @@ DLL_EXPORT Layer Net_GetLayer(Net net, int layerid);
 DLL_EXPORT void Layer_Close(Layer layer);
 DLL_EXPORT int Layer_InputNameToIndex(Layer layer, const char* name);
 DLL_EXPORT int Layer_OutputNameToIndex(Layer layer, const char* name);
-const char* Layer_GetName(Layer layer);
-const char* Layer_GetType(Layer layer);
+DLL_EXPORT const char* Layer_GetName(Layer layer);
+DLL_EXPORT const char* Layer_GetType(Layer layer);
 DLL_EXPORT void NMSBoxes(struct Rects bboxes, FloatVector scores, float score_threshold, float nms_threshold, IntVector* indices);
 DLL_EXPORT void NMSBoxesWithParams(struct Rects bboxes, FloatVector scores, const float score_threshold, const float nms_threshold, IntVector* indices, const float eta, const int top_k);
 

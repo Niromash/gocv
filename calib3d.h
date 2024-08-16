@@ -1,12 +1,11 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CALIB_H_
 #define _OPENCV3_CALIB_H_
+
+#include "mvsc.h"
 
 #ifdef __cplusplus
 #include <opencv2/opencv.hpp>
 #include <opencv2/calib3d.hpp>
-
 
 extern "C" {
 #endif

@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_IMGCODECS_H_
 #define _OPENCV3_IMGCODECS_H_
 
@@ -11,6 +9,7 @@ extern "C" {
 #endif
 
 #include "core.h"
+
 DLL_EXPORT Mat Image_IMRead(const char* filename, int flags);
 DLL_EXPORT bool Image_IMWrite(const char* filename, Mat img);
 DLL_EXPORT bool Image_IMWrite_WithParams(const char* filename, Mat img, IntVector params);

@@ -1,6 +1,3 @@
-#include "mvsc.h"
-
-
 #ifndef _OPENCV3_TRACKING_H_
 #define _OPENCV3_TRACKING_H_
 
@@ -22,6 +19,7 @@ typedef void* Tracker;
 typedef void* TrackerKCF;
 typedef void* TrackerCSRT;
 #endif
+
 DLL_EXPORT bool TrackerSubclass_Init(Tracker self, Mat image, Rect boundingBox);
 DLL_EXPORT bool TrackerSubclass_Update(Tracker self, Mat image, Rect* boundingBox);
 DLL_EXPORT TrackerKCF TrackerKCF_Create();

@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_PHOTO_H_
 #define _OPENCV3_PHOTO_H_
 
@@ -20,6 +18,7 @@ typedef cv::Ptr<cv::AlignMTB> *AlignMTB;
 typedef void *MergeMertens;
 typedef void *AlignMTB;
 #endif
+
 DLL_EXPORT void ColorChange(Mat src, Mat mask, Mat dst, float red_mul, float green_mul, float blue_mul);
 DLL_EXPORT void SeamlessClone(Mat src, Mat dst, Mat mask, Point p, Mat blend, int flags);
 DLL_EXPORT void IlluminationChange(Mat src, Mat mask, Mat dst, float alpha, float beta);

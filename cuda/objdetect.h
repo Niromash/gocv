@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_GPU_H_
 #define _OPENCV3_GPU_H_
 
@@ -26,12 +24,12 @@ typedef void* HOG;
 
 // CascadeClassifier
 DLL_EXPORT CascadeClassifier_GPU CascadeClassifier_GPU_Create(const char*  cascade_name);
-struct Rects CascadeClassifier_GPU_DetectMultiScale(CascadeClassifier_GPU cs, GpuMat img);
+DLL_EXPORT struct Rects CascadeClassifier_GPU_DetectMultiScale(CascadeClassifier_GPU cs, GpuMat img);
 
 // HOG
 DLL_EXPORT HOG HOG_Create();
 DLL_EXPORT HOG HOG_CreateWithParams(Size winSize, Size blockSize, Size blockStride, Size cellSize, int nbins);
-struct Rects HOG_DetectMultiScale(HOG hog, GpuMat img);
+DLL_EXPORT struct Rects HOG_DetectMultiScale(HOG hog, GpuMat img);
 DLL_EXPORT GpuMat HOG_Compute(HOG hog, GpuMat img);
 DLL_EXPORT Mat HOG_GetPeopleDetector(HOG hog);
 DLL_EXPORT void HOG_SetSVMDetector(HOG hog, Mat det);
@@ -45,7 +43,7 @@ DLL_EXPORT double HOG_GetL2HysThreshold(HOG hog);
 DLL_EXPORT int HOG_GetNumLevels(HOG hog);
 DLL_EXPORT double HOG_GetScaleFactor(HOG hog);
 DLL_EXPORT double HOG_GetWinSigma(HOG hog);
-struct Size HOG_GetWinStride(HOG hog);
+DLL_EXPORT struct Size HOG_GetWinStride(HOG hog);
 DLL_EXPORT void HOG_SetDescriptorFormat(HOG hog, int descrFormat);
 DLL_EXPORT void HOG_SetGammaCorrection(HOG hog, bool gammaCorrection);
 DLL_EXPORT void HOG_SetGroupThreshold(HOG hog, int groupThreshold);

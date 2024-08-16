@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_IMGPROC_H_
 #define _OPENCV3_IMGPROC_H_
 
@@ -17,6 +15,7 @@ typedef void* CLAHE;
 #endif
 
 #include "core.h"
+
 DLL_EXPORT double ArcLength(PointVector curve, bool is_closed);
 DLL_EXPORT PointVector ApproxPolyDP(PointVector curve, double epsilon, bool closed);
 DLL_EXPORT void CvtColor(Mat src, Mat dst, int code);
@@ -38,16 +37,16 @@ DLL_EXPORT void Erode(Mat src, Mat dst, Mat kernel);
 DLL_EXPORT void ErodeWithParams(Mat src, Mat dst, Mat kernel, Point anchor, int iterations, int borderType);
 DLL_EXPORT void ErodeWithParamsAndBorderValue(Mat src, Mat dst, Mat kernel, Point anchor, int iterations, int borderType, Scalar borderValue);
 DLL_EXPORT void MatchTemplate(Mat image, Mat templ, Mat result, int method, Mat mask);
-struct Moment Moments(Mat src, bool binaryImage);
+DLL_EXPORT struct Moment Moments(Mat src, bool binaryImage);
 DLL_EXPORT void PyrDown(Mat src, Mat dst, Size dstsize, int borderType);
 DLL_EXPORT void PyrUp(Mat src, Mat dst, Size dstsize, int borderType);
-struct Rect BoundingRect(PointVector pts);
+DLL_EXPORT struct Rect BoundingRect(PointVector pts);
 DLL_EXPORT void BoxPoints(RotatedRect rect, Mat boxPts);
 DLL_EXPORT void BoxPoints2f(RotatedRect2f rect, Mat boxPts);
 DLL_EXPORT double ContourArea(PointVector pts);
-struct RotatedRect MinAreaRect(PointVector pts);
-struct RotatedRect2f MinAreaRect2f(PointVector pts);
-struct RotatedRect FitEllipse(PointVector pts);
+DLL_EXPORT struct RotatedRect MinAreaRect(PointVector pts);
+DLL_EXPORT struct RotatedRect2f MinAreaRect2f(PointVector pts);
+DLL_EXPORT struct RotatedRect FitEllipse(PointVector pts);
 DLL_EXPORT void MinEnclosingCircle(PointVector pts, Point2f* center, float* radius);
 DLL_EXPORT PointsVector FindContours(Mat src, Mat hierarchy, int mode, int method);
 DLL_EXPORT double PointPolygonTest(PointVector pts, Point pt, bool measureDist);
@@ -93,8 +92,8 @@ DLL_EXPORT void RectangleWithParams(Mat img, Rect rect, Scalar color, int thickn
 DLL_EXPORT void FillPoly(Mat img, PointsVector points, Scalar color);
 DLL_EXPORT void FillPolyWithParams(Mat img, PointsVector points, Scalar color, int lineType, int shift, Point offset);
 DLL_EXPORT void Polylines(Mat img, PointsVector points, bool isClosed, Scalar color, int thickness);
-struct Size GetTextSize(const char* text, int fontFace, double fontScale, int thickness);
-struct Size GetTextSizeWithBaseline(const char* text, int fontFace, double fontScale, int thickness, int* baseline);
+DLL_EXPORT struct Size GetTextSize(const char* text, int fontFace, double fontScale, int thickness);
+DLL_EXPORT struct Size GetTextSizeWithBaseline(const char* text, int fontFace, double fontScale, int thickness, int* baseline);
 DLL_EXPORT void PutText(Mat img, const char* text, Point org, int fontFace, double fontScale,
              Scalar color, int thickness);
 DLL_EXPORT void PutTextWithParams(Mat img, const char* text, Point org, int fontFace, double fontScale,
@@ -115,7 +114,7 @@ DLL_EXPORT Mat GetPerspectiveTransform(PointVector src, PointVector dst);
 DLL_EXPORT Mat GetPerspectiveTransform2f(Point2fVector src, Point2fVector dst);
 DLL_EXPORT Mat GetAffineTransform(PointVector src, PointVector dst);
 DLL_EXPORT Mat GetAffineTransform2f(Point2fVector src, Point2fVector dst);
-Mat FindHomography(Mat src, Mat dst, int method, double ransacReprojThreshold, Mat mask, const int maxIters, const double confidence) ;
+DLL_EXPORT Mat FindHomography(Mat src, Mat dst, int method, double ransacReprojThreshold, Mat mask, const int maxIters, const double confidence) ;
 DLL_EXPORT void DrawContours(Mat src, PointsVector contours, int contourIdx, Scalar color, int thickness);
 DLL_EXPORT void DrawContoursWithParams(Mat src, PointsVector contours, int contourIdx, Scalar color, int thickness, int lineType, Mat hierarchy, int maxLevel, Point offset);
 DLL_EXPORT void Sobel(Mat src, Mat dst, int ddepth, int dx, int dy, int ksize, double scale, double delta, int borderType);

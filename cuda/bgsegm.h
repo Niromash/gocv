@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CUDABGSEGM_H_
 #define _OPENCV3_CUDABGSEGM_H_
 
@@ -20,6 +18,7 @@ typedef cv::Ptr<cv::cuda::BackgroundSubtractorMOG>* CudaBackgroundSubtractorMOG;
 typedef void* CudaBackgroundSubtractorMOG2;
 typedef void* CudaBackgroundSubtractorMOG;
 #endif
+
 DLL_EXPORT CudaBackgroundSubtractorMOG2 CudaBackgroundSubtractorMOG2_Create();
 DLL_EXPORT void CudaBackgroundSubtractorMOG2_Close(CudaBackgroundSubtractorMOG2 b);
 DLL_EXPORT void CudaBackgroundSubtractorMOG2_Apply(CudaBackgroundSubtractorMOG2 b, GpuMat src, GpuMat dst, Stream s);

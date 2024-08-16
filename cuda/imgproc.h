@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CUDA_IMGPROC_H_
 #define _OPENCV3_CUDA_IMGPROC_H_
 

@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CUDAWARPING_H_
 #define _OPENCV3_CUDAWARPING_H_
 
@@ -12,6 +10,7 @@ extern "C" {
 
 #include "../core.h"
 #include "cuda.h"
+
 DLL_EXPORT void CudaResize(GpuMat src, GpuMat dst, Size dsize, double fx, double fy, int interp, Stream s);
 DLL_EXPORT void CudaPyrDown(GpuMat src, GpuMat dst, Stream s);
 DLL_EXPORT void CudaPyrUp(GpuMat src, GpuMat dst, Stream s);

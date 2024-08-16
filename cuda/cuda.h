@@ -1,7 +1,7 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CUDA_H_
 #define _OPENCV3_CUDA_H_
+
+#include "../mvsc.h"
 
 #ifdef __cplusplus
 #include <opencv2/opencv.hpp>
@@ -19,6 +19,7 @@ typedef cv::cuda::Stream* Stream;
 typedef void* GpuMat;
 typedef void* Stream;
 #endif
+
 DLL_EXPORT GpuMat GpuMat_New();
 DLL_EXPORT GpuMat GpuMat_NewFromMat(Mat mat);
 DLL_EXPORT GpuMat GpuMat_NewWithSize(int rows, int cols, int type);

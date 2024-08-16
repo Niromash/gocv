@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CUDA_CORE_H_
 #define _OPENCV3_CUDA_CORE_H_
 
@@ -10,6 +8,7 @@
 #include <opencv2/opencv.hpp>
 extern "C" {
 #endif
+
 DLL_EXPORT void GpuRects_Close(struct Rects rs);
 
 #ifdef __cplusplus

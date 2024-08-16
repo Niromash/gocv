@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_HIGHGUI_H_
 #define _OPENCV3_HIGHGUI_H_
 
@@ -20,8 +18,8 @@ DLL_EXPORT void Window_SetTitle(const char* winname, const char* title);
 DLL_EXPORT int Window_WaitKey(int);
 DLL_EXPORT void Window_Move(const char* winname, int x, int y);
 DLL_EXPORT void Window_Resize(const char* winname, int width, int height);
-struct Rect Window_SelectROI(const char* winname, Mat img);
-struct Rects Window_SelectROIs(const char* winname, Mat img);
+DLL_EXPORT struct Rect Window_SelectROI(const char* winname, Mat img);
+DLL_EXPORT struct Rects Window_SelectROIs(const char* winname, Mat img);
 
 // Trackbar
 DLL_EXPORT void Trackbar_Create(const char* winname, const char* trackname, int max);

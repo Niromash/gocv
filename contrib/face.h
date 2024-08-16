@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_FACE_H_
 #define _OPENCV3_FACE_H_
 
@@ -22,11 +20,12 @@ struct PredictResponse {
     int label;
     double confidence;
 };
+
 DLL_EXPORT LBPHFaceRecognizer CreateLBPHFaceRecognizer();
 DLL_EXPORT void LBPHFaceRecognizer_Train(LBPHFaceRecognizer fr, Mats images, IntVector labels);
 DLL_EXPORT void LBPHFaceRecognizer_Update(LBPHFaceRecognizer fr, Mats images, IntVector labels);
 DLL_EXPORT int LBPHFaceRecognizer_Predict(LBPHFaceRecognizer fr, Mat sample);
-struct PredictResponse LBPHFaceRecognizer_PredictExtended(LBPHFaceRecognizer fr, Mat sample);
+DLL_EXPORT struct PredictResponse LBPHFaceRecognizer_PredictExtended(LBPHFaceRecognizer fr, Mat sample);
 DLL_EXPORT void LBPHFaceRecognizer_SetThreshold(LBPHFaceRecognizer fr, double threshold);
 DLL_EXPORT void LBPHFaceRecognizer_SetRadius(LBPHFaceRecognizer fr, int radius);
 DLL_EXPORT void LBPHFaceRecognizer_SetNeighbors(LBPHFaceRecognizer fr, int neighbors);

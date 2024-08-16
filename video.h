@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_VIDEO_H_
 #define _OPENCV3_VIDEO_H_
 
@@ -26,6 +24,7 @@ typedef void* TrackerMIL;
 typedef void* TrackerGOTURN;
 typedef void* KalmanFilter;
 #endif
+
 DLL_EXPORT BackgroundSubtractorMOG2 BackgroundSubtractorMOG2_Create();
 DLL_EXPORT BackgroundSubtractorMOG2 BackgroundSubtractorMOG2_CreateWithParams(int history, double varThreshold, bool detectShadows);
 DLL_EXPORT void BackgroundSubtractorMOG2_Close(BackgroundSubtractorMOG2 b);

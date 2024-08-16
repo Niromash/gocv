@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_SVD_H_
 #define _OPENCV3_SVD_H_
 
@@ -10,6 +8,7 @@ extern "C" {
 #endif
 
 #include "core.h"
+
 DLL_EXPORT void SVD_Compute(Mat src, Mat w, Mat u, Mat vt);
 
 #ifdef __cplusplus

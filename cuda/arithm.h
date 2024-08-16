@@ -1,5 +1,3 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CUDA_ARITHM_H_
 #define _OPENCV3_CUDA_ARITHM_H_
 
@@ -12,6 +10,7 @@
 extern "C" {
 #endif
 #include "cuda.h"
+
 DLL_EXPORT void GpuAbs(GpuMat src, GpuMat dst, Stream s);
 DLL_EXPORT void GpuAbsDiff(GpuMat src1, GpuMat src2, GpuMat dst, Stream s);
 DLL_EXPORT void GpuAdd(GpuMat src1, GpuMat src2, GpuMat dst, Stream s);

@@ -1,10 +1,9 @@
-#include "mvsc.h"
-
 #ifndef _OPENCV3_CORE_H_
 #define _OPENCV3_CORE_H_
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "mvsc.h"
 
 // Wrapper for std::vector<string>
 typedef struct CStrings {
@@ -273,9 +272,8 @@ typedef struct Mats {
     int length;
 } Mats;
 DLL_EXPORT Mat Mats_get(struct Mats mats, int i);
-struct DMatches MultiDMatches_get(struct MultiDMatches mds, int index);
-
-struct ByteArray toByteArray(const char* buf, int len);
+DLL_EXPORT struct DMatches MultiDMatches_get(struct MultiDMatches mds, int index);
+DLL_EXPORT struct ByteArray toByteArray(const char* buf, int len);
 DLL_EXPORT void ByteArray_Release(struct ByteArray buf);
 DLL_EXPORT void Contours_Close(struct Contours cs);
 DLL_EXPORT void KeyPoints_Close(struct KeyPoints ks);
@@ -309,8 +307,8 @@ DLL_EXPORT void Mat_Size(Mat m, IntVector* res);
 DLL_EXPORT void Mat_CopyToWithMask(Mat m, Mat dst, Mat mask);
 DLL_EXPORT void Mat_ConvertTo(Mat m, Mat dst, int type);
 DLL_EXPORT void Mat_ConvertToWithParams(Mat m, Mat dst, int type, float alpha, float beta);
-struct ByteArray Mat_ToBytes(Mat m);
-struct ByteArray Mat_DataPtr(Mat m);
+DLL_EXPORT struct ByteArray Mat_ToBytes(Mat m);
+DLL_EXPORT struct ByteArray Mat_DataPtr(Mat m);
 DLL_EXPORT Mat Mat_Region(Mat m, Rect r);
 DLL_EXPORT Mat Mat_Reshape(Mat m, int cn, int rows);
 DLL_EXPORT void Mat_PatchNaNs(Mat m);
@@ -485,8 +483,7 @@ DLL_EXPORT RNG TheRNG();
 DLL_EXPORT void SetRNGSeed(int seed);
 DLL_EXPORT void RNG_Fill(RNG rng, Mat mat, int distType, double a, double b, bool saturateRange);
 DLL_EXPORT double RNG_Gaussian(RNG rng, double sigma);
-
-unsigned int RNG_Next(RNG rng);
+DLL_EXPORT unsigned int RNG_Next(RNG rng);
 DLL_EXPORT void RandN(Mat mat, Scalar mean, Scalar stddev);
 DLL_EXPORT void RandShuffle(Mat mat);
 DLL_EXPORT void RandShuffleWithParams(Mat mat, double iterFactor, RNG rng);
