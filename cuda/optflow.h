@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV_CUDAOPTFLOW_HPP_
 #define _OPENCV_CUDAOPTFLOW_HPP_
 

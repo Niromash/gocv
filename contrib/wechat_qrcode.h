@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV4_WECHAT_QRCODE_H_
 #define _OPENCV4_WECHAT_QRCODE_H_
 

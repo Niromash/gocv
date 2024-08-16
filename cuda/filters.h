@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _GOCV_CUDA_FILTERS_H_
 #define _GOCV_CUDA_FILTERS_H_
 

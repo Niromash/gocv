@@ -8,15 +8,18 @@ import (
 	"strings"
 )
 
-func addDLLExport(content string) (string, bool) {
-	re := regexp.MustCompile(`(?m)^\s*([^\s]+\s+[^\s]+\([^)]*\);)`)
-	updatedContent := re.ReplaceAllString(content, "DLL_EXPORT $1")
+func removeDLLExport(content string) (string, bool) {
+	re := regexp.MustCompile(`(?m)^\s*DLL_EXPORT\s+([^\s]+\s+[^\s]+\([^)]*\);)`)
+	updatedContent := re.ReplaceAllString(content, "$1")
 	return updatedContent, updatedContent != content
 }
 
-func addIncludeIfNecessary(content string) string {
-	if !strings.Contains(content, `#include "mvsc.h"`) {
-		return `#include "mvsc.h"` + "\n\n" + content
+func removeIncludeIfNecessary(content string) string {
+	includeLine := `#include "mvsc.h"`
+	if strings.Contains(content, includeLine) {
+		updatedContent := strings.Replace(content, includeLine+"\n\n", "", 1)
+		updatedContent = strings.Replace(updatedContent, includeLine+"\n", "", 1)
+		return updatedContent
 	}
 	return content
 }
@@ -27,9 +30,9 @@ func processFile(path string) error {
 		return err
 	}
 
-	updatedContent, modified := addDLLExport(string(content))
+	updatedContent, modified := removeDLLExport(string(content))
 	if modified {
-		updatedContent = addIncludeIfNecessary(updatedContent)
+		updatedContent = removeIncludeIfNecessary(updatedContent)
 	}
 
 	if err := os.WriteFile(path, []byte(updatedContent), 0644); err != nil {

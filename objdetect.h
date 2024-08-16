@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV3_OBJDETECT_H_
 #define _OPENCV3_OBJDETECT_H_
 

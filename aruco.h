@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV3_ARUCO_H_
 #define _OPENCV3_ARUCO_H_
 

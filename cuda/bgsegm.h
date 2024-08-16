@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV3_CUDABGSEGM_H_
 #define _OPENCV3_CUDABGSEGM_H_
 

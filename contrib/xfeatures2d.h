@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV3_XFEATURES2D_H_
 #define _OPENCV3_XFEATURES2D_H_
 

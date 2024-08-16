@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV3_CALIB_H_
 #define _OPENCV3_CALIB_H_
 
