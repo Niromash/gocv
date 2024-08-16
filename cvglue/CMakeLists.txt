@@ -15,7 +15,7 @@ else()
 endif()
 
 if(CMAKE_HOST_WIN32 EQUAL 1)
-    set(CMAKE_INSTALL_PREFIX D:/opencv/cvglue_4.7.0)
+    set(CMAKE_INSTALL_PREFIX D:/opencv/cvglue_4.10.0)
 else()
     set(CMAKE_INSTALL_PREFIX /usr/local/)
 endif()

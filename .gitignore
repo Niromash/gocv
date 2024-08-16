@@ -10,3 +10,6 @@ count.out
 .idea/
 contrib/data.yaml
 contrib/testOilPainting.png
+cvglue/build
+cvglue/out
+.vs
