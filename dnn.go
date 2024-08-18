@@ -431,7 +431,7 @@ func (net *Net) GetPerfProfile() float64 {
 func (net *Net) GetUnconnectedOutLayers() (ids []int) {
 	cids := C.IntVector{}
 	C.Net_GetUnconnectedOutLayers((C.Net)(net.p), &cids)
-	defer C.free(unsafe.Pointer(cids.val))
+	defer C.IntVector_Close(cids)
 
 	h := &reflect.SliceHeader{
 		Data: uintptr(unsafe.Pointer(cids.val)),
@@ -526,7 +526,7 @@ func NMSBoxes(bboxes []image.Rectangle, scores []float32, scoreThreshold float32
 	indicesVector := C.IntVector{}
 
 	C.NMSBoxes(bboxesRects, scoresVector, C.float(scoreThreshold), C.float(nmsThreshold), &indicesVector)
-	defer C.free(unsafe.Pointer(indicesVector.val))
+	defer C.IntVector_Close(indicesVector)
 
 	h := &reflect.SliceHeader{
 		Data: uintptr(unsafe.Pointer(indicesVector.val)),
@@ -575,7 +575,7 @@ func NMSBoxesWithParams(bboxes []image.Rectangle, scores []float32, scoreThresho
 	indicesVector := C.IntVector{}
 
 	C.NMSBoxesWithParams(bboxesRects, scoresVector, C.float(scoreThreshold), C.float(nmsThreshold), &indicesVector, C.float(eta), C.int(topK))
-	defer C.free(unsafe.Pointer(indicesVector.val))
+	defer C.IntVector_Close(indicesVector)
 
 	h := &reflect.SliceHeader{
 		Data: uintptr(unsafe.Pointer(indicesVector.val)),
