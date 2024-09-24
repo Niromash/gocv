@@ -1259,7 +1259,7 @@ struct RotatedRect RotatedRect_Create(struct Point2f center, int width, int heig
     Point centrpt = {int(lroundf(cvrect.center.x)), int(lroundf(cvrect.center.y))};
     Size szsz = {int(lroundf(cvrect.size.width)), int(lroundf(cvrect.size.height))};
 
-    RotatedRect retrect = {(Contour){rpts, 4}, r, centrpt, szsz, cvrect.angle};
+    RotatedRect retrect = {{rpts, 4}, r, centrpt, szsz, cvrect.angle};
     return retrect;
 }
 
@@ -1286,6 +1286,6 @@ struct RotatedRect2f RotatedRect2f_Create(struct Point2f center, float width, fl
     Point2f centrpt = {cvrect.center.x, cvrect.center.y};
     Size2f szsz = {cvrect.size.width, cvrect.size.height};
 
-    RotatedRect2f retrect = {(Contour2f){rpts, 4}, r, centrpt, szsz, cvrect.angle};
+    RotatedRect2f retrect = {{rpts, 4}, r, centrpt, szsz, cvrect.angle};
     return retrect;
 }

@@ -1,3 +1,5 @@
+#include "../mvsc.h"
+
 #ifndef _OPENCV3_FREETYPE2_H_
 #define _OPENCV3_FREETYPE2_H_
 
@@ -14,16 +16,15 @@ typedef cv::Ptr<cv::freetype::FreeType2>* FreeType2;
 #else
 typedef void* FreeType2;
 #endif
-
-FreeType2 FreeType2_CreateFreeType2();
-void FreeType2_Close(FreeType2 f);
-void FreeType2_LoadFontData(FreeType2 f, const char* fontFileName, int id);
-void FreeType2_SetSplitNumber(FreeType2 f, int num);
-void FreeType2_PutText(FreeType2 f, Mat img, const char* text, Point org,
+DLL_EXPORT FreeType2 FreeType2_CreateFreeType2();
+DLL_EXPORT void FreeType2_Close(FreeType2 f);
+DLL_EXPORT void FreeType2_LoadFontData(FreeType2 f, const char* fontFileName, int id);
+DLL_EXPORT void FreeType2_SetSplitNumber(FreeType2 f, int num);
+DLL_EXPORT void FreeType2_PutText(FreeType2 f, Mat img, const char* text, Point org,
         int fontHeight, Scalar color,
         int thickness, int line_type, bool bottomLeftOrigin
     );
-Size FreeType2_GetTextSize(FreeType2 f, const char* text,
+DLL_EXPORT Size FreeType2_GetTextSize(FreeType2 f, const char* text,
                                 int fontHeight, int thickness, int* baseLine);
 
 #ifdef __cplusplus

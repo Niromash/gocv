@@ -1,3 +1,5 @@
+#include "../mvsc.h"
+
 #ifndef _OPENCV3_CUDABGSEGM_H_
 #define _OPENCV3_CUDABGSEGM_H_
 
@@ -18,14 +20,12 @@ typedef cv::Ptr<cv::cuda::BackgroundSubtractorMOG>* CudaBackgroundSubtractorMOG;
 typedef void* CudaBackgroundSubtractorMOG2;
 typedef void* CudaBackgroundSubtractorMOG;
 #endif
-
-CudaBackgroundSubtractorMOG2 CudaBackgroundSubtractorMOG2_Create();
-void CudaBackgroundSubtractorMOG2_Close(CudaBackgroundSubtractorMOG2 b);
-void CudaBackgroundSubtractorMOG2_Apply(CudaBackgroundSubtractorMOG2 b, GpuMat src, GpuMat dst, Stream s);
-
-CudaBackgroundSubtractorMOG CudaBackgroundSubtractorMOG_Create();
-void CudaBackgroundSubtractorMOG_Close(CudaBackgroundSubtractorMOG b);
-void CudaBackgroundSubtractorMOG_Apply(CudaBackgroundSubtractorMOG b, GpuMat src, GpuMat dst, Stream s);
+DLL_EXPORT CudaBackgroundSubtractorMOG2 CudaBackgroundSubtractorMOG2_Create();
+DLL_EXPORT void CudaBackgroundSubtractorMOG2_Close(CudaBackgroundSubtractorMOG2 b);
+DLL_EXPORT void CudaBackgroundSubtractorMOG2_Apply(CudaBackgroundSubtractorMOG2 b, GpuMat src, GpuMat dst, Stream s);
+DLL_EXPORT CudaBackgroundSubtractorMOG CudaBackgroundSubtractorMOG_Create();
+DLL_EXPORT void CudaBackgroundSubtractorMOG_Close(CudaBackgroundSubtractorMOG b);
+DLL_EXPORT void CudaBackgroundSubtractorMOG_Apply(CudaBackgroundSubtractorMOG b, GpuMat src, GpuMat dst, Stream s);
 
 #ifdef __cplusplus
 }

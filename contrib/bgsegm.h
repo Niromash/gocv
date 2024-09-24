@@ -1,3 +1,5 @@
+#include "../mvsc.h"
+
 #ifndef _OPENCV3_VIDEO_H_
 #define _OPENCV3_VIDEO_H_
 
@@ -14,10 +16,9 @@ typedef cv::Ptr<cv::bgsegm::BackgroundSubtractorCNT>* BackgroundSubtractorCNT;
 #else
 typedef void* BackgroundSubtractorCNT;
 #endif
-
-BackgroundSubtractorCNT BackgroundSubtractorCNT_Create();
-void BackgroundSubtractorCNT_Close(BackgroundSubtractorCNT b);
-void BackgroundSubtractorCNT_Apply(BackgroundSubtractorCNT b, Mat src, Mat dst);
+DLL_EXPORT BackgroundSubtractorCNT BackgroundSubtractorCNT_Create();
+DLL_EXPORT void BackgroundSubtractorCNT_Close(BackgroundSubtractorCNT b);
+DLL_EXPORT void BackgroundSubtractorCNT_Apply(BackgroundSubtractorCNT b, Mat src, Mat dst);
 
 #ifdef __cplusplus
 }

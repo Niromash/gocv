@@ -1,3 +1,5 @@
+#include "mvsc.h"
+
 #ifndef _OPENCV3_VERSION_H_
 #define _OPENCV3_VERSION_H_
 
@@ -7,8 +9,7 @@ extern "C" {
 #endif
 
 #include "core.h"
-
-const char* openCVVersion();
+DLL_EXPORT const char* openCVVersion();
 
 #ifdef __cplusplus
 }
